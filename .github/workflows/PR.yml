@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger pr-autobuild action for building PR
-      - run: "yarn build"
+        run: "yarn build"
       
