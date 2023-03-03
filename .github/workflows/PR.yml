@@ -1,12 +1,19 @@
-name: "build-test"
+name: PR Checks
+
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Trigger pr-autobuild action for building PR
-        run: "yarn build"
-      
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
