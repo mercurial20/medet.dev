@@ -2,15 +2,21 @@ version: '3'
 
 services:
   app:
-    image: some-image
+    image: app
     build: 
       context: .
       dockerfile: Dockerfile
   proxy:
+    image: proxy
     build:
       context: .
       dockerfile: ./nginx/Dockerfile
     ports:
       - 80:80
+      - 443:443
+    restart: always
     depends_on:
       - app
+    volumes:
+      - /etc/letsencrypt/live/medet.dev/fullchain.pem:/etc/ssl/fullchain.pem
+      - /etc/letsencrypt/live/medet.dev/privkey.pem:/etc/ssl/privkey.pem
