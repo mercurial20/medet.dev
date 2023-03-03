@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    image: some-image
+    build: 
+      dockerfile: Dockerfile
+  proxy:
+    build:
+      dockerfile: ./nginx/Dockerfile
+    ports:
+      - 80:80
+    depends_on:
+      - app
