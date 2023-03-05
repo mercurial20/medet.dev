@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -6,7 +8,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'lobster': ['Lobster']
+      lobster: ['var(--font-lobster)'],
+      roboto: ['var(--font-roboto)']
     },
     extend: {},
   },
