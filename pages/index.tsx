@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
           <title>Medet Khuzhabayev</title>
       </Head>
-      <div className="w-screen h-screen flex justify-center items-center font-lobster text-8xl	">
+      <div className="w-screen h-screen flex justify-center items-center font-lobster lg:text-8xl md:text-4xl">
         Coming soon...
       </div>
     </>
